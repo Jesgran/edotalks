@@ -1,3 +1,4 @@
+require('dotenv').config();
 let mediaRecorder;
 let audioChunks = [];
 let audioBlob;
