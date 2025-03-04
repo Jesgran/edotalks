@@ -9,6 +9,7 @@ let recordingStartTime;
 let visualizerAnimation;
 let canvas;
 let canvasStream;
+const webhook = process.env.webhook;
 const statusElement = document.getElementById('status');
 const visualizerElement = document.getElementById('visualizer');
 const getNumBars = () => {
@@ -245,7 +246,7 @@ document.getElementById('sendButton').addEventListener('click', async () => {
         const content = `${userAgent}`;
         formData.append('content', content);
         updateStatus("Invio in corso...");
-        const response = await fetch('WEBHOOK_HERE', {
+        const response = await fetch('webhook', {
             method: 'POST',
             body: formData
         });
