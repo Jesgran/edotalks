@@ -9,7 +9,7 @@ let recordingStartTime;
 let visualizerAnimation;
 let canvas;
 let canvasStream;
-const webhook = Deno.env.get('WEBHOOK');
+const webhook = process.env.webhook;
 const statusElement = document.getElementById('status');
 const visualizerElement = document.getElementById('visualizer');
 const getNumBars = () => {
